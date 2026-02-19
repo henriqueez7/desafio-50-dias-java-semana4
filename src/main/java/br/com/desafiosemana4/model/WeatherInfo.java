@@ -21,6 +21,27 @@ public class WeatherInfo {
         this.umidade = umidade;
     }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public double getTemperatura() {
+        return temperatura;
+    }
+
+    public double getSensacao() {
+        return sensacao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public int getUmidade() {
+        return umidade;
+    }
+
+
     public void exibir() {
         System.out.println("\nClima em " + cidade);
         System.out.println("Temperatura: " + temperatura + "°C");
