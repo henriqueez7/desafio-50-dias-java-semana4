@@ -15,11 +15,15 @@ public class WeatherInfo {
                        int umidade) {
 
         if (cidade == null || cidade.isBlank()) {
-            throw new IllegalArgumentException("Cidade inválida");
+            throw new IllegalArgumentException("Cidade não pode ser vazia");
+        }
+
+        if (descricao == null || descricao.isBlank()) {
+            throw new IllegalArgumentException("Descrição não pode ser vazia");
         }
 
         if (umidade < 0 || umidade > 100) {
-            throw new IllegalArgumentException("Umidade inválida");
+            throw new IllegalArgumentException("Umidade deve estar entre 0 e 100");
         }
 
         this.cidade = cidade;

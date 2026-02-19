@@ -7,27 +7,53 @@ import static org.junit.jupiter.api.Assertions.*;
 class WeatherInfoValidationTest {
 
     @Test
-    void deveLancarExcecaoQuandoCidadeForInvalida() {
+    void deveLancarErroQuandoCidadeForVazia() {
         assertThrows(IllegalArgumentException.class, () ->
                 new WeatherInfo(
                         "",
-                        25.0,
-                        26.0,
-                        "céu limpo",
-                        60
+                        20.0,
+                        22.0,
+                        "nublado",
+                        70
                 )
         );
     }
 
     @Test
-    void deveLancarExcecaoQuandoUmidadeForInvalida() {
+    void deveLancarErroQuandoDescricaoForVazia() {
         assertThrows(IllegalArgumentException.class, () ->
                 new WeatherInfo(
                         "São Paulo",
-                        25.0,
-                        26.0,
-                        "céu limpo",
+                        20.0,
+                        22.0,
+                        "",
+                        70
+                )
+        );
+    }
+
+    @Test
+    void deveLancarErroQuandoUmidadeForNegativa() {
+        assertThrows(IllegalArgumentException.class, () ->
+                new WeatherInfo(
+                        "São Paulo",
+                        20.0,
+                        22.0,
+                        "chuva",
                         -10
+                )
+        );
+    }
+
+    @Test
+    void deveLancarErroQuandoUmidadeForMaiorQue100() {
+        assertThrows(IllegalArgumentException.class, () ->
+                new WeatherInfo(
+                        "São Paulo",
+                        20.0,
+                        22.0,
+                        "sol",
+                        150
                 )
         );
     }
