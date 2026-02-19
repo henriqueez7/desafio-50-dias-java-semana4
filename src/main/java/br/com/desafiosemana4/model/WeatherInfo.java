@@ -14,6 +14,14 @@ public class WeatherInfo {
                        String descricao,
                        int umidade) {
 
+        if (cidade == null || cidade.isBlank()) {
+            throw new IllegalArgumentException("Cidade inválida");
+        }
+
+        if (umidade < 0 || umidade > 100) {
+            throw new IllegalArgumentException("Umidade inválida");
+        }
+
         this.cidade = cidade;
         this.temperatura = temperatura;
         this.sensacao = sensacao;
@@ -40,7 +48,6 @@ public class WeatherInfo {
     public int getUmidade() {
         return umidade;
     }
-
 
     public void exibir() {
         System.out.println("\nClima em " + cidade);
