@@ -1,5 +1,4 @@
-package model;
-import br.com.desafiosemana4.model.WeatherInfo;
+package br.com.desafiosemana4.model;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
